@@ -1,21 +1,30 @@
 import { ChangeEvent, useState } from "react";
+import { useSetAtom } from "jotai";
+import uuid from "react-uuid";
+import { isCheckedAuthAtom, usernameAtom } from "../../atoms/myNote.atom";
 
 export const Login = () => {
-  const [userId, setUserId] = useState<string>("");
+  const userId = uuid();
+
+  const [name, setName] = useState<string>("");
+  const setUserName = useSetAtom(usernameAtom);
+  const setIsCheckedAuth = useSetAtom(isCheckedAuthAtom);
 
   const handleChangeId = (e: ChangeEvent<HTMLInputElement>) => {
-    setUserId(e.target.value);
+    setName(e.target.value);
   };
 
   const handleLogin = () => {
-    if (!userId) return;
+    if (!name) return;
 
-    console.log("Login");
+    localStorage.setItem("userId", userId);
+    setUserName(name);
+    setIsCheckedAuth(true);
   };
 
   return (
     <div>
-      <input type="text" value={userId} onChange={handleChangeId} />
+      <input type="text" value={name} onChange={handleChangeId} />
       <button onClick={handleLogin}>Login</button>
     </div>
   );
