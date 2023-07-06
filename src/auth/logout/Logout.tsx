@@ -14,9 +14,11 @@ export const Logout = () => {
   };
 
   return (
-    <div>
-      <span>{username}</span>
-      <button onClick={handleLogout}>LOGOUT</button>
+    <div className="auth">
+      <span className="auth__text">{username} 님</span>
+      <button className="btn auth__btn" onClick={handleLogout}>
+        LOGOUT
+      </button>
     </div>
   );
 };
