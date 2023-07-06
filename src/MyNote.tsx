@@ -1,20 +1,28 @@
+import { useAtomValue } from "jotai";
 import { Login } from "./auth/login/Login";
-import { MyNoteListPage } from "./list/MyNoteListPage";
+import { MyNoteListTitle } from "./components/MyNoteListTitle";
 import { Logout } from "./auth/logout/Logout";
+import { MyNoteCreatePage } from "./create/MyNoteCreatePage";
+import { isCheckedAuthAtom, noteInfoAtom } from "./atoms/myNote.atom";
+import { CreatePageButton } from "./components/CreatePageButton";
 
 export const MyNote = () => {
-  const isAuth = false;
+  const noteList = useAtomValue(noteInfoAtom);
+  const isCheckedAuth = useAtomValue(isCheckedAuthAtom);
 
-  const handleCreatePage = () => {
-    //제목없음으로 생성 (list)
-    //createPage 펼치기
-  };
   return (
-    <>
-      {isAuth ? <Logout /> : <Login />}
-      <h1>MyNote</h1>
-      <button onClick={handleCreatePage}>새로 만들기</button>
-      <MyNoteListPage />
-    </>
+    <div className="container">
+      <div className="header">
+        <h1 className="logo">MyNote</h1>
+        {isCheckedAuth ? <Logout /> : <Login />}
+      </div>
+      <CreatePageButton />
+      <div className="note--list">
+        {noteList
+          .map((note) => <MyNoteListTitle key={note.id} data={note} />)
+          .reverse()}
+      </div>
+      <MyNoteCreatePage />
+    </div>
   );
 };
