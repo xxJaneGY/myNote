@@ -1,0 +1,30 @@
+:root {
+  //bg-color
+  // --main-bg-color:
+
+  //color
+  --dark-grey-color: #333;
+  --grey-color: #888;
+  --light-grey-color: #ccc;
+  --white-color: #fff;
+  --black-color: #000;
+
+  //btn-color
+  --login-btn-color: #ea7317;
+  --create-btn-color: #2364aa;
+
+  //font-size
+
+  --font-x-large: 5rem;
+  --font-large: 3rem;
+  --font-medium: 2rem;
+  --font-small: 1.6rem;
+  --font-x-small: 1.2rem;
+}
+
+.divide__line {
+  display: block;
+  width: 100%;
+  margin: 1rem 0;
+  border-bottom: 1px solid var(--light-grey-color);
+}

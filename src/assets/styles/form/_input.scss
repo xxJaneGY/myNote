@@ -1,0 +1,8 @@
+.input {
+  margin: 0 1rem;
+  line-height: 4rem;
+
+  &::placeholder {
+    color: var(--light-grey-color);
+  }
+}

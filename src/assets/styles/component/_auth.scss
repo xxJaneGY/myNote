@@ -1,0 +1,27 @@
+.auth {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  margin-right: 3rem;
+  font-size: var(--font-small);
+
+  &__text {
+    width: 13rem;
+    line-height: 3rem;
+    margin: 0 1rem;
+    text-align: right;
+    color: var(--dark-grey-color);
+  }
+
+  &__input {
+    width: 13rem;
+    color: var(--dark-grey-color);
+    border-bottom: 1px solid var(--light-grey-color);
+  }
+
+  &__btn {
+    // width: 35%;
+    background-color: var(--login-btn-color);
+    color: var(--white-color);
+  }
+}

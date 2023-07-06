@@ -1,0 +1,20 @@
+.wrapper {
+  max-width: 1920px;
+  height: 1080px;
+  padding: 1rem;
+}
+
+.container {
+  position: relative;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 1rem 4rem;
+
+  .logo {
+    font-size: 5rem;
+    font-weight: bolder;
+  }
+}

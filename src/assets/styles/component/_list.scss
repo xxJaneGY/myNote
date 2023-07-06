@@ -1,0 +1,52 @@
+.create {
+  &--wrapper {
+    text-align: right;
+  }
+
+  &__btn {
+    margin-right: 4rem;
+    background-color: var(--create-btn-color);
+    color: var(--white-color);
+  }
+}
+
+.note {
+  &--list {
+    margin: 2rem;
+    color: var(--grey-color);
+  }
+
+  &--item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+  }
+
+  &--title {
+    position: relative;
+    padding-left: 2.5rem;
+    font-size: var(--font-medium);
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "📝";
+    }
+
+    &::after {
+      position: absolute;
+      top: 2rem;
+      left: 2.5rem;
+      width: calc(100% - 2.5rem);
+      height: 1px;
+      background-color: var(--light-grey-color);
+      content: "";
+    }
+  }
+
+  &--info {
+    font-size: var(--font-x-small);
+  }
+}
