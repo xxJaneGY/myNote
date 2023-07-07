@@ -15,9 +15,13 @@ export const TopMenuButton = () => {
   };
 
   return (
-    <div>
-      <button onClick={handleClose}>닫기</button>
-      <button onClick={handleShowFullScreen}>전체화면</button>
+    <div className="top__wrapper">
+      <button className="top__btn--close" onClick={handleClose}>
+        닫기
+      </button>
+      <button className="top__btn--full" onClick={handleShowFullScreen}>
+        전체화면
+      </button>
     </div>
   );
 };

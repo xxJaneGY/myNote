@@ -1,6 +1,13 @@
 .create {
   &--wrapper {
+    position: relative;
+    width: 100%;
+    transition: width 0.2s;
     text-align: right;
+
+    &.active {
+      width: 45%;
+    }
   }
 
   &__btn {
